@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xsi:type="TaskPaneApp">
+
+  <Id>e1d3a1a7-99d3-4af5-8fd3-6e83d4d8b75b</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>CodeCrow</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Third Hand AI Assistant"/>
+  <Description DefaultValue="An AI-powered assistant for generating text based on user prompts."/>
+
+  <!-- Ensure this is a direct link to the image -->
+  <IconUrl DefaultValue="https://drive.google.com/uc?export=view&amp;id=1A3V9eXRiXe8w5YMWUw2oKM2Q3-1V_4H-"/>
+
+  <SupportUrl DefaultValue="https://docs.microsoft.com/en-us/office/dev/add-ins"/>
+
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+
+  <!-- Ensure this is a direct link to the HTML file -->
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://drive.google.com/file/d/11TAerMN2uieIE8zvXle_fpDGCbCQGFSK/view?usp=drive_link"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="grpThirdHand">
+                <Label resid="residTabLabel"/>
+                <Icon>
+                  <bt:Image size="80" resid="icon80"/>
+                </Icon>
+                <Control xsi:type="Button" id="btnThirdHand">
+                  <Label resid="residButtonLabel"/>
+                  <Supertip>
+                    <Title resid="residButtonSupertipTitle"/>
+                    <Description resid="residButtonSupertipDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="80" resid="icon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="residTaskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <!-- Ensure this is a direct link to the image -->
+        <bt:Image id="icon80" DefaultValue="https://drive.google.com/uc?export=view&amp;id=1A3V9eXRiXe8w5YMWUw2oKM2Q3-1V_4H-"/>
+      </bt:Images>
+      <bt:Urls>
+        <!-- Ensure this is a direct link to the HTML file -->
+        <bt:Url id="residTaskpaneUrl" DefaultValue="https://drive.google.com/file/d/11TAerMN2uieIE8zvXle_fpDGCbCQGFSK/view?usp=drive_link"/>
+      </bt:Urls>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
